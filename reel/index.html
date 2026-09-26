@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude — Motion Reel</title>
+<style>
+  @font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; src: url(fonts/instrument-serif-latin-400-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; src: url(fonts/instrument-serif-latin-400-italic.woff2) format("woff2"); }
+  @font-face { font-family: "Inter Tight"; font-weight: 300; src: url(fonts/inter-tight-latin-300-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Inter Tight"; font-weight: 500; src: url(fonts/inter-tight-latin-500-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Inter Tight"; font-weight: 700; src: url(fonts/inter-tight-latin-700-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Inter Tight"; font-weight: 900; src: url(fonts/inter-tight-latin-900-normal.woff2) format("woff2"); }
+  @font-face { font-family: "JetBrains Mono"; font-weight: 400; src: url(fonts/jetbrains-mono-latin-400-normal.woff2) format("woff2"); }
+  @font-face { font-family: "JetBrains Mono"; font-weight: 700; src: url(fonts/jetbrains-mono-latin-700-normal.woff2) format("woff2"); }
+  html, body { margin: 0; background: #0b0b0a; height: 100%; }
+  body { display: grid; place-items: center; overflow: hidden; }
+  canvas { display: block; width: min(100vw, calc(100vh * 16 / 9)); height: auto; aspect-ratio: 16 / 9; }
+  body.render canvas { width: 1920px; height: 1080px; }
+  #play { position: fixed; inset: 0; display: grid; place-items: center; background: transparent; border: 0; cursor: pointer;
+          font: 500 14px/1 "JetBrains Mono", monospace; letter-spacing: .3em; color: #F0EEE6; }
+  #play span { padding: 18px 28px; border: 1px solid #F0EEE666; border-radius: 999px; background: #141413cc; }
+  body.render #play { display: none; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<button id="play" hidden><span>▶ PLAY REEL (SOUND ON)</span></button>
+<audio id="audio" src="assets/music.wav" preload="auto"></audio>
+<script src="assets/waveform.js"></script>
+<script src="reel.js"></script>
+</body>
+</html>
