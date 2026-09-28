@@ -1,0 +1,21 @@
+<!doctype html><html><body style="margin:0;background:#111">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/","@pixiv/three-vrm":"./node_modules/@pixiv/three-vrm/lib/three-vrm.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { loadCharacter, applyPose, setFace, setRim } from './src/chars.js';
+import { P } from './src/poses.js';
+const r = new THREE.WebGLRenderer({ antialias: true }); r.setSize(innerWidth, innerHeight); r.setScissorTest(true); document.body.prepend(r.domElement);
+const scene = new THREE.Scene();
+const L = new THREE.DirectionalLight(0xffffff, 2.2); L.position.set(1.5, 2.5, 2); scene.add(L); scene.add(new THREE.AmbientLight(0xffffff, .7));
+const hero = await loadCharacter('hero'), vil = await loadCharacter('villain');
+scene.add(hero.root, vil.root); hero.root.position.x = -3; vil.root.position.x = 3;
+setRim(vil, new THREE.Color(0xff2040)); setRim(hero, new THREE.Color(0x3060ff));
+const W = innerWidth / 4, H = innerHeight;
+const shots = [[vil, 'hipCock', {}, [3, .9, 3.8], [3, .75, 0]], [vil, 'idle', { happy: .6 }, [3.02, 1.28, .75], [3, 1.26, 0]], [hero, 'idle', { angry: .5 }, [-2.98, 1.28, .75], [-3, 1.27, 0]], [hero, 'stance', {}, [-1.2, .5, 2.4], [-3, .45, 0]]];
+shots.forEach(([ch, pose, face, cp, tg], i) => {
+  applyPose(ch, P[pose]); setFace(ch, face); ch.vrm.update(0);
+  const cam = new THREE.PerspectiveCamera(i == 1 || i == 2 ? 25 : 30, W / H, .05, 50); cam.position.set(...cp); cam.lookAt(...tg);
+  r.setViewport(i * W, 0, W, H); r.setScissor(i * W, 0, W, H); r.setClearColor(0x3a3d48); r.clear(); r.render(scene, cam);
+});
+window.READY = true;
+</script></body></html>
