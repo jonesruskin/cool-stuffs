@@ -204,8 +204,8 @@ shot('05 look up', 3.2, c => { const { E: X, lt } = c;
   if (lt < 1.6) cam(X, [-.6, 1.0, stopZ - 1.7], [0, 1.28, stopZ], 30, 0);
   else {
     // extreme close-up: the eye, a red glint in it
-    const h = bonePos(X.hero, 'head');
-    cam(X, [h.x + .05, h.y + .06, h.z - .28], [h.x + .03, h.y + .07, h.z], 16, 0);
+    const e = bonePos(X.hero, 'rightEye');
+    cam(X, [e.x - .01, e.y + .03, e.z - .24], [e.x + .018, e.y + .028, e.z], 13, 0); X.key.intensity = .8;
     X.overlay.add((x, W, H) => { const a = prog(lt, 2.2, 2.6); x.globalAlpha = a * .8; const g = x.createRadialGradient(W * .56, H * .45, 0, W * .56, H * .45, 60); g.addColorStop(0, 'rgba(255,40,60,.9)'); g.addColorStop(1, 'rgba(255,0,0,0)'); x.fillStyle = g; x.fillRect(0, 0, W, H); });
   }
 }, [[1.6, 'cut'], [2.2, 'glint']]);
