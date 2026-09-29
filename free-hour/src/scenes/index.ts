@@ -1,0 +1,11 @@
+import React from 'react';
+import { ChapterId } from '../lib/theme';
+import { Fire } from './Fire';
+import { City } from './City';
+import { Page } from './Page';
+import { Clock } from './Clock';
+import { Signal } from './Signal';
+import { Screen } from './Screen';
+import { AI } from './AI';
+import { Close } from './Close';
+export const SCENES: Partial<Record<ChapterId, React.FC>> = { fire: Fire, city: City, page: Page, clock: Clock, signal: Signal, screen: Screen, ai: AI, close: Close };

@@ -1,0 +1,17 @@
+{
+  "fps": 30,
+  "bpm": 100,
+  "barFrames": 72,
+  "chapters": [
+    { "id": "open",   "bars": 5, "title": "",                 "era": "",                  "carrier": "",                "shared": 0 },
+    { "id": "axioms", "bars": 8, "title": "",                 "era": "",                  "carrier": "",                "shared": 0 },
+    { "id": "fire",   "bars": 7, "title": "The Fire",         "era": "40,000 years ago",  "carrier": "Fire & voice",    "shared": 30 },
+    { "id": "city",   "bars": 8, "title": "The City",         "era": "5,000 years ago",   "carrier": "Stage & arena",   "shared": 50000 },
+    { "id": "page",   "bars": 6, "title": "The Page",         "era": "1440",              "carrier": "Print",           "shared": 1 },
+    { "id": "clock",  "bars": 7, "title": "The Clock",        "era": "1850",              "carrier": "Leisure industry","shared": 100000 },
+    { "id": "signal", "bars": 8, "title": "The Signal",       "era": "1877",              "carrier": "Broadcast",       "shared": 600000000 },
+    { "id": "screen", "bars": 9, "title": "The Screen",       "era": "1972",              "carrier": "Interactive screens", "shared": 3000000000 },
+    { "id": "ai",     "bars": 9, "title": "The Audience of One", "era": "2022",           "carrier": "Generative AI",   "shared": 1 },
+    { "id": "close",  "bars": 8, "title": "",                 "era": "",                  "carrier": "",                "shared": 0 }
+  ]
+}
