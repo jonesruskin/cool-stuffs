@@ -3,7 +3,7 @@
 A 30-second fight sequence made **without a GPU or any generative AI**. It's designed around what code
 can do well instead of imitating 3D anime.
 
-▶ `out/test30.mp4` (1920×1080, 24 fps, stereo)
+▶ `hour-of-ink-30s.mp4` (1920×1080, 24 fps, stereo)
 
 ## Look
 
