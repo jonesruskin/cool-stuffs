@@ -1,0 +1,265 @@
+{
+ "title": "墨ノ刻 — 30s test",
+ "fps": 24,
+ "bpm": 160,
+ "barFrames": 36,
+ "width": 1920,
+ "height": 1080,
+ "style": "anime key visual, modern shonen battle anime, dynamic cel shading, crisp clean lineart, cinematic lighting, rain-soaked Tokyo night, high contrast, film grain, masterpiece, best quality",
+ "negative": "3d render, cgi, doll, chibi, childish, cute proportions, blurry, lowres, deformed hands, extra fingers, bad anatomy, watermark, text, logo, jpeg artifacts, washed out",
+ "characters": {
+  "ren": "Ren, 17-year-old male sorcerer, messy black hair, sharp amber eyes, lean athletic build, dark navy high-collar school uniform jacket with gold buttons, black pants, bandaged right hand, faint blue-black ink-like cursed energy",
+  "ayame": "Ayame, female curse user in her twenties, very long straight white hair, crimson eyes, pale skin, cruel smile, black cropped haori jacket over black streetwear, red thread wound around her fingers, red cursed energy"
+ },
+ "shots": [
+  {
+   "id": "s01",
+   "bars": 3,
+   "label": "新宿 · 23:47",
+   "desc": "Wide. Rain-soaked Shinjuku scramble crossing at night, neon kanji signs, Ren stands alone in the center of the crosswalk, back to camera.",
+   "camera": "slow push-in, low angle",
+   "cast": [
+    "ren"
+   ],
+   "keyframe": "wide shot, rain-soaked Shinjuku scramble crossing at night, towering neon signs with kanji, reflections on wet asphalt, a lone boy standing in the center of the crosswalk seen from behind, umbrellas absent, heavy rain",
+   "motion": "slow cinematic push-in, heavy rain falling, neon flicker, puddle reflections ripple, the boy stands still, coat moving slightly in wind",
+   "fx": [
+    "location"
+   ]
+  },
+  {
+   "id": "s02",
+   "bars": 1,
+   "label": "屋上",
+   "desc": "Ayame crouched on a rooftop ledge, huge moon behind, hair and red threads streaming in the wind.",
+   "camera": "low angle, static",
+   "cast": [
+    "ayame"
+   ],
+   "keyframe": "low angle, woman crouching on the edge of a rooftop ledge, enormous full moon behind her, long white hair and red threads streaming in the wind, silhouette rim light, night city below",
+   "motion": "hair and red threads whip in strong wind, rain streaks, she slowly raises her head, subtle camera sway",
+   "fx": []
+  },
+  {
+   "id": "s03",
+   "bars": 1,
+   "label": "紅い眼",
+   "desc": "Extreme close-up: Ayame's crimson eye, pupil contracting, a slow grin.",
+   "camera": "ECU",
+   "cast": [
+    "ayame"
+   ],
+   "keyframe": "extreme close-up of a crimson anime eye with sharp eyelashes, slit pupil, reflections of neon, strands of white hair, rain droplets on skin, menacing",
+   "motion": "pupil contracts, eye narrows into a cruel smile, rain droplets run down, red glow pulses",
+   "fx": [],
+   "sub": [
+    "二年生か",
+    "A second-year?"
+   ]
+  },
+  {
+   "id": "s04",
+   "bars": 1,
+   "label": "琥珀の眼",
+   "desc": "Extreme close-up: Ren's amber eye opens, blue-black energy flickers across his lashes.",
+   "camera": "ECU",
+   "cast": [
+    "ren"
+   ],
+   "keyframe": "extreme close-up of a sharp amber anime eye opening, black messy bangs, blue-black ink-like energy flickering around the eyelashes, rain on face, intense determined gaze",
+   "motion": "eye snaps open, ink-like dark blue energy flickers and rises, rain falls in front of the lens",
+   "fx": [],
+   "sub": [
+    "十分だ",
+    "That's enough."
+   ]
+  },
+  {
+   "id": "s05",
+   "bars": 1,
+   "label": "跳躍",
+   "desc": "Ayame leaps from the rooftop, silhouette crossing the moon.",
+   "camera": "tracking, from below",
+   "cast": [
+    "ayame"
+   ],
+   "keyframe": "silhouette of a woman leaping from a rooftop across a giant full moon, arms spread, long white hair flowing, red threads trailing behind her, rain",
+   "motion": "she leaps and arcs across the moon toward the camera, hair and threads trailing, fast motion",
+   "fx": [
+    "speedlines"
+   ]
+  },
+  {
+   "id": "s06",
+   "bars": 1,
+   "label": "突進",
+   "desc": "Ren crouches and blasts forward, water exploding from the asphalt behind him.",
+   "camera": "low, frontal",
+   "cast": [
+    "ren"
+   ],
+   "keyframe": "dynamic low angle, boy in navy school uniform crouched in a sprinter stance on wet asphalt, about to launch forward, dark blue energy flaring, water spray, neon street",
+   "motion": "he explodes forward toward camera, water and asphalt fragments burst behind him, motion blur, camera shake",
+   "fx": [
+    "speedlines",
+    "shake"
+   ]
+  },
+  {
+   "id": "s07",
+   "bars": 0.5,
+   "label": "激突",
+   "desc": "CLASH. Their fists collide mid-air; a ring of rain blasts outward.",
+   "camera": "side, mid-air",
+   "cast": [
+    "ren",
+    "ayame"
+   ],
+   "keyframe": "two fighters colliding mid-air, fist against fist, shockwave ring blasting rain outward, blue and red energy colliding, sparks, side view, dramatic",
+   "motion": "fists collide, shockwave ring expands, rain blown outward in a circle, both fighters recoil",
+   "fx": [
+    "impact",
+    "shake",
+    "flash"
+   ],
+   "hit": 0
+  },
+  {
+   "id": "s08",
+   "bars": 1.5,
+   "label": "応酬",
+   "desc": "Rapid exchange: punches and blocks at point-blank range, sparks on every contact.",
+   "camera": "low angle, handheld",
+   "cast": [
+    "ren",
+    "ayame"
+   ],
+   "keyframe": "close-quarters fight, boy in navy uniform throwing a punch while a white-haired woman blocks with her forearm, sparks at impact, rain, neon, low angle, dynamic composition",
+   "motion": "fast exchange of punches and blocks, sparks on contact, rain splashing, aggressive handheld camera",
+   "fx": [
+    "speedlines",
+    "shake"
+   ],
+   "hits": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+   ]
+  },
+  {
+   "id": "s09",
+   "bars": 1,
+   "label": "紅織",
+   "desc": "Technique: Ayame spreads her arms; hundreds of red threads fan out across the street.",
+   "camera": "wide, centered",
+   "cast": [
+    "ayame"
+   ],
+   "keyframe": "white-haired woman spreading her arms wide in the middle of a neon street, hundreds of glowing red threads fanning out from her fingers across the street and buildings, rain, symmetrical composition",
+   "motion": "red threads shoot outward in all directions and pull taut, glowing, rain slicing on the threads",
+   "fx": [
+    "card:紅織:CRIMSON WEAVE:right"
+   ]
+  },
+  {
+   "id": "s10",
+   "bars": 1.5,
+   "label": "回避",
+   "desc": "Threads slice a lamp post and a car in half; Ren slides under them.",
+   "camera": "low, tracking",
+   "cast": [
+    "ren"
+   ],
+   "keyframe": "boy in navy uniform sliding on his knees under glowing red threads on a wet street, a lamp post and a car sliced cleanly in half behind him, sparks, rain",
+   "motion": "he slides under the red threads, a car behind him splits in half and separates, sparks fly, camera tracks alongside",
+   "fx": [
+    "speedlines"
+   ],
+   "hits": [
+    0.3
+   ]
+  },
+  {
+   "id": "s11",
+   "bars": 1,
+   "label": "墨",
+   "desc": "Ren's right fist gathers black ink and blue flame.",
+   "camera": "close, on the fist",
+   "cast": [
+    "ren"
+   ],
+   "keyframe": "close-up of a clenched bandaged fist engulfed in swirling black ink and blue flame, droplets of ink floating upward, rain, dark background",
+   "motion": "black ink swirls and condenses around the fist, blue flame intensifies, ink droplets float upward",
+   "fx": [
+    "charge"
+   ]
+  },
+  {
+   "id": "s12",
+   "bars": 1,
+   "label": "墨閃",
+   "desc": "INK FLASH. The punch lands on Ayame's guard; black lightning, space distorts.",
+   "camera": "frontal, tight",
+   "cast": [
+    "ren",
+    "ayame"
+   ],
+   "keyframe": "boy's ink-covered fist connecting with a woman's crossed arms, black lightning crackling, red and black shockwave, distorted space, extreme impact",
+   "motion": "the fist lands, black lightning erupts outward, shockwave distorts the air, she is blasted backward",
+   "fx": [
+    "inkflash",
+    "shake"
+   ],
+   "hit": 0
+  },
+  {
+   "id": "s13",
+   "bars": 1.5,
+   "label": "吹飛",
+   "desc": "Ayame is blasted through a giant neon sign; glass and sparks explode.",
+   "camera": "wide, follow",
+   "cast": [
+    "ayame"
+   ],
+   "keyframe": "white-haired woman blasted backward through a giant neon sign on a building, exploding glass and sparks, red threads snapping, rain, night",
+   "motion": "she crashes through the neon sign, glass and sparks explode outward, sign shorts out and flickers",
+   "fx": [
+    "shake"
+   ],
+   "hits": [
+    0.2
+   ]
+  },
+  {
+   "id": "s14",
+   "bars": 2,
+   "label": "余韻",
+   "desc": "Aftermath: Ren stands in the rain, steam rising from his fist, energy fading.",
+   "camera": "medium, slow pull-back",
+   "cast": [
+    "ren"
+   ],
+   "keyframe": "boy in navy uniform standing in heavy rain on a wrecked street, steam rising from his fist, faint blue-black energy fading, neon reflections, calm expression, cinematic",
+   "motion": "rain falls, steam rises from his fist, energy fades, slow pull-back",
+   "fx": [],
+   "sub": [
+    "……帰って寝る",
+    "…I'm going home to sleep."
+   ]
+  },
+  {
+   "id": "s15",
+   "bars": 2,
+   "label": "題",
+   "desc": "Title card.",
+   "camera": "-",
+   "cast": [],
+   "keyframe": null,
+   "motion": null,
+   "fx": [
+    "title"
+   ]
+  }
+ ]
+}
