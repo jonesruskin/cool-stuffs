@@ -23,8 +23,9 @@ const Phonograph: React.FC<{ f: number; o: number }> = ({ f, o }) => {
       <Draw d={['M990 470 L870 560', 'M990 470 L990 420']} at={66} dur={18} color={P.ink} width={5} />
       <circle cx={990} cy={470} r={10} fill={P.ink} opacity={prog(f, 66, 10)} />
       <g opacity={prog(f, 72, 16)}>
-        <path d="M982 420 C1000 360 1040 300 1090 250 L1150 310 C1090 340 1030 380 998 426 Z" fill={P.acc} opacity={.9} />
-        <ellipse cx={1122} cy={278} rx={52} ry={88} transform="rotate(45 1122 278)" fill={P.acc2} opacity={.25} stroke={P.acc} strokeWidth={4} />
+        {/* one flared cone from the pivot, opening towards the top right */}
+        <path d="M984 428 C1010 380 1060 320 1098 262 L1188 346 C1120 368 1050 402 1004 440 Z" fill={P.acc} />
+        <ellipse cx={1143} cy={304} rx={30} ry={64} transform="rotate(43 1143 304)" fill="#0a1416" stroke={P.acc} strokeWidth={5} />
       </g>
       <path d={wave} stroke={P.acc} strokeWidth={3} fill="none" opacity={prog(f, 92, 10)} />
     </g>
@@ -46,7 +47,7 @@ const Cinema: React.FC<{ f: number; o: number }> = ({ f, o }) => {
     </g>
   );
 };
-const HOUSES = Array.from({ length: 12 }, (_, i) => ({ x: 250 + i * 130 + (i > 5 ? 120 : 0), y: 800 }));
+const HOUSES = Array.from({ length: 12 }, (_, i) => ({ x: i < 6 ? 200 + i * 112 : 1160 + (i - 6) * 112, y: 800 }));
 const Radio: React.FC<{ f: number; o: number }> = ({ f, o }) => (
   <g opacity={o}>
     <Draw d={['M960 360 L880 780', 'M960 360 L1040 780', 'M905 650 L1015 650', 'M920 560 L1000 560', 'M935 460 L985 460', 'M880 780 L1015 650', 'M1040 780 L905 650']}
@@ -112,7 +113,7 @@ export const Signal: React.FC = () => {
       </svg>
       <div style={{ position: 'absolute', left: 120, top: 300, opacity: env(f, 436, 572, 14, 12) }}>
         <div style={{ fontFamily: '"JetBrains Mono"', fontSize: 18, letterSpacing: 4, color: P.dim }}>MOON LANDING · 1969 · WATCHED LIVE (EST.)</div>
-        <div style={{ fontFamily: '"JetBrains Mono"', fontSize: 88, color: P.acc, marginTop: 6 }}><Counter from={1000} to={600000000} at={440} dur={44} /></div>
+        <div style={{ fontFamily: '"JetBrains Mono"', fontSize: 88, color: P.acc, marginTop: 6 }}><Counter from={50000000} to={600000000} at={440} dur={34} /></div>
       </div>
       <Label text="each window: a home tuned to the same broadcast" at={352} out={424} x={960} y={836} color={P.dim} align="center" rule={false} size={18} />
       <Label text="1877 · the phonograph" at={70} out={150} x={760} y={800} color={P.dim} align="center" rule={false} size={15} />
@@ -124,7 +125,7 @@ export const Signal: React.FC = () => {
       <Cap text="1920: the signal came into the home." at={256} out={334} color={P.ink} em={['home.']} emColor={P.acc} />
       <Cap text="1950s: millions watched the same thing, at the same moment." at={346} out={426} color={P.ink} size={40} />
       <Cap text="One broadcast. An estimated 600 million people at once —" at={440} out={504} color={P.ink} size={40} />
-      <Cap text="the largest audience in history. And the most passive." at={508} out={574} color={P.ink} size={40} em={['passive.']} emColor={P.acc} />
+      <Cap text="the largest audience in history. And the most passive." at={518} out={574} color={P.ink} size={40} em={['passive.']} emColor={P.acc} />
     </AbsoluteFill>
   );
 };

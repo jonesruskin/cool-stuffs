@@ -64,7 +64,7 @@ export const Axioms: React.FC = () => {
             const g = gather; const ax = lerp(n.x, CX, g), ay = lerp(n.y, CY, g), bx = lerp(m.x, CX, g), by = lerp(m.y, CY, g);
             return <line key={k} x1={ax} y1={ay} x2={lerp(ax, bx, p)} y2={lerp(ay, by, p)} stroke={P2.dim} strokeWidth={1.5} strokeDasharray="4 7" opacity={.8} />;
           })}
-          {NODE.map((n, k) => { const p = prog(f, 250 + k * 34, 24); return <line key={'s' + k} x1={CX} y1={CY} x2={lerp(CX, lerp(n.x, CX, gather), p)} y2={lerp(CY, lerp(n.y, CY, gather), p)} stroke={P2.acc} strokeWidth={1} opacity={.25} />; })}
+          {NODE.map((n, k) => { const p = prog(f, 250 + k * 34, 24) * (1 - prog(f, 436, 14)); return <line key={'s' + k} x1={CX} y1={CY} x2={lerp(CX, lerp(n.x, CX, gather), p)} y2={lerp(CY, lerp(n.y, CY, gather), p)} stroke={P2.acc} strokeWidth={1} opacity={.25} />; })}
         </g>
       </svg>
       <Line text="Strip away the technology." at={30} out={146} y={470} size={86} color={P2.ink} />

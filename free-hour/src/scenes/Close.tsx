@@ -50,7 +50,7 @@ export const Close: React.FC = () => {
               </div>
               <div style={{ position: 'absolute', left: 120, top: Y0 + r * RH + RH - 8, width: 1680 * ra, height: 1, background: P.dim, opacity: .25 }} />
               {/* the constancy sweep: each need runs unbroken across every era */}
-              <div style={{ position: 'absolute', left: X0 - 10, top: Y0 + r * RH + 32, width: (CW * 7) * sweep, height: 2, background: P.acc, opacity: .35 * (1 - prog(f, 262, 24)) }} />
+              <div style={{ position: 'absolute', left: 120, top: Y0 + r * RH + RH - 9, width: 1680 * sweep, height: 2, background: P.acc, opacity: .7 * (1 - prog(f, 262, 24)) }} />
               {CELLS[k.id].map((t, c) => {
                 const a = prog(f, 34 + c * 16 + r * 3, 14);
                 const last = c === 6;

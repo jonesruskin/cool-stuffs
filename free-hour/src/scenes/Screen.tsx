@@ -112,7 +112,7 @@ export const Screen: React.FC = () => {
       <Cap text="1972: fun became interactive." at={68} out={166} color={P.ink} em={['interactive.']} emColor={P.acc2} />
       <Cap text="1979: then personal." at={180} out={262} color={P.ink} em={['personal.']} emColor={P.acc} />
       <Cap text="1991: the Web. 2005: anyone could broadcast." at={276} out={362} color={P.ink} em={['anyone']} emColor={P.acc2} />
-      <Cap text="2007: then infinite." at={376} out={436} color={P.ink} em={['infinite.']} emColor={P.acc} />
+      <Cap text="2007: then infinite." at={376} out={432} color={P.ink} em={['infinite.']} emColor={P.acc} />
       <Cap text="Today, over 3 billion people play video games." at={444} out={500} color={P.ink} em={['3', 'billion']} emColor={P.acc2} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 50%, rgba(5,3,11,.92) 0%, rgba(5,3,11,.75) 35%, rgba(5,3,11,.35) 70%)', opacity: swarm }} />
       <ChapterHead n={7} kicker="1972 – today" title="The Screen" pal={P} dur={648} />

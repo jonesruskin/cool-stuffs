@@ -50,7 +50,7 @@ const THEATRE = Array.from({ length: N }, (_, i) => {
 });
 const ARENA = Array.from({ length: N * 2 }, (_, i) => {
   const ring = i % 22, a = random(`aa${i}`) * Math.PI * 2;
-  return { x: 960 + Math.cos(a) * (250 + ring * 11.5), y: 505 + Math.sin(a) * (145 + ring * 7.8) };
+  return { x: 960 + Math.cos(a) * (250 + ring * 10), y: 505 + Math.sin(a) * (145 + ring * 7.2) };
 });
 
 export const City: React.FC = () => {
@@ -67,7 +67,7 @@ export const City: React.FC = () => {
           {/* orchestra (stage) → arena floor */}
           <ellipse cx={960} cy={lerp(745, 505, morph)} rx={lerp(84, 225, morph)} ry={lerp(84, 124, morph)} fill={P.bg2}
             stroke={split > 0 ? P.acc : P.dim} strokeWidth={lerp(1.5, 3, split)} />
-          {morph > .02 && <ellipse cx={960} cy={505} rx={512} ry={322} fill="none" stroke={P.dim} strokeWidth={1.5} opacity={morph * .6} />}
+          {morph > .02 && <ellipse cx={960} cy={505} rx={482} ry={306} fill="none" stroke={P.dim} strokeWidth={1.5} opacity={morph * .6} />}
           {THEATRE.map((d, i) => {
             const on = prog(f, 214 + d.row * 5 + random(`td${i}`) * 8, 10);
             const t = ARENA[i];
@@ -87,16 +87,16 @@ export const City: React.FC = () => {
       <div style={{ position: 'absolute', right: 150, top: 150, textAlign: 'right', opacity: env(f, 250, 548, 16, 20) }}>
         <div style={{ fontFamily: '"JetBrains Mono"', fontSize: 16, letterSpacing: 4, color: P.dim }}>{morph < .5 ? 'SEATS · THEATRE, GREECE' : 'SEATS · COLOSSEUM, ROME'}</div>
         <div style={{ fontFamily: '"JetBrains Mono"', fontSize: 64, color: P.acc2, marginTop: 6 }}>
-          {f < 380 ? <Counter from={10} to={14000} at={214} dur={90} /> : <Counter from={14000} to={50000} at={386} dur={60} log={false} />}
+          {f < 380 ? <Counter from={2} to={14000} at={214} dur={34} /> : <Counter from={14000} to={50000} at={386} dur={34} />}
         </div>
       </div>
-      <Tag id="game" text="Senet · the Royal Game of Ur" x={120} y={260} at={104} out={214} pal={P} />
+      <Tag id="game" text="Senet · Egypt, 3100 BCE" x={120} y={260} at={104} out={214} pal={P} />
       <Tag id="story" text="tragedy, comedy, epic" x={120} y={260} at={246} pal={P} />
-      <Tag id="together" text="festivals & the Olympic Games" x={120} y={340} at={266} pal={P} />
-      <Tag id="thrill" text="gladiators & chariot races" x={120} y={420} at={420} pal={P} />
+      <Tag id="together" text="festivals & games" x={120} y={340} at={266} pal={P} />
+      <Tag id="thrill" text="gladiators & races" x={120} y={420} at={420} pal={P} />
       <Cap text="Rules became objects: the first board games." at={104} out={206} color={P.ink} em={['board', 'games']} emColor={P.acc2} />
       <Cap text="Greek theatres seated up to 14,000." at={226} out={364} color={P.ink} />
-      <Cap text="Rome's Colosseum held about 50,000." at={384} out={466} color={P.ink} />
+      <Cap text="Rome’s Colosseum held about 50,000." at={384} out={466} color={P.ink} />
       <Cap text="For the first time, the crowd split from the show." at={478} out={570} color={P.ink} em={['crowd', 'show']} emColor={P.acc} />
     </AbsoluteFill>
   );

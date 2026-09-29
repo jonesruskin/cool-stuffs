@@ -79,7 +79,7 @@ const Chart: React.FC<{ f: number; o: number }> = ({ f, o }) => {
       {SERIES.slice(0, 6).map(([n, v], i) => { const a = prog(f, 312 + i * 11, 10);
         return <g key={n} opacity={a}><circle cx={X(i)} cy={Y(v)} r={7} fill={P.ink} />
           <text x={X(i)} y={808} textAnchor="middle" fontFamily="Instrument Serif" fontSize={30} fill={P.ink}>{n}</text>
-          <text x={X(i) + 16} y={Y(v) + (i === 1 || i === 5 ? -16 : 26)} textAnchor="start" fontFamily="JetBrains Mono" fontSize={18} fill={P.ink} opacity={.8}>{v >= 1e9 ? '3B' : v >= 1e6 ? '600M' : fmt(v)}</text></g>; })}
+          <text x={X(i) + 16} y={Y(v) + (i === 1 || i === 2 || i === 5 ? -16 : 26)} textAnchor="start" fontFamily="JetBrains Mono" fontSize={18} fill={P.ink} opacity={.8}>{v >= 1e9 ? '3B' : v >= 1e6 ? '600M' : fmt(v)}</text></g>; })}
       {plunge > 0 && <>
         <line x1={X(5)} y1={Y(3e9)} x2={lerp(X(5), X(6), plunge)} y2={lerp(Y(3e9), Y(1), plunge)} stroke={P.acc} strokeWidth={4} style={{ filter: `drop-shadow(0 0 10px ${P.acc})` }} />
         <circle cx={X(6)} cy={Y(1)} r={10 * plunge} fill={P.acc} />
@@ -129,13 +129,13 @@ export const AI: React.FC = () => {
       <Tag id="story" text="stories that answer you" x={120} y={260} at={80} out={300} pal={P} />
       <Tag id="rhythm" text="songs on demand" x={120} y={340} at={158} out={300} pal={P} />
       <Tag id="game" text="worlds that adapt to you" x={120} y={420} at={238} out={300} pal={P} />
-      <Cap text="Now fun can be generated — a story written for you, as you read." at={74} out={148} color={P.ink} size={40} em={['generated']} emColor={P.acc2} />
-      <Cap text="Music no one has heard before." at={156} out={228} color={P.ink} />
+      <Cap text="Now fun can be generated — a story written for you, as you read." at={74} out={144} color={P.ink} size={40} em={['generated']} emColor={P.acc2} />
+      <Cap text="Music no one has heard before." at={156} out={224} color={P.ink} />
       <Cap text="Worlds that build themselves as you explore." at={236} out={300} color={P.ink} />
-      <Cap text="For 40,000 years, the shared audience mostly grew." at={318} out={386} color={P.ink} />
+      <Cap text="For 40,000 years, the shared audience mostly grew." at={318} out={380} color={P.ink} />
       <Cap text="Now an experience can be made for exactly one." at={392} out={452} color={P.ink} em={['one.']} emColor={P.acc} />
       <Cap text="A machine can make endless stories." at={468} out={540} color={P.ink} />
-      <Cap text="It can't sit by the fire with you." at={552} out={644} color={P.ink} em={['fire']} emColor={FIRE.acc} italic />
+      <Cap text="It can’t sit by the fire with you." at={552} out={644} color={P.ink} em={['fire']} emColor={FIRE.acc} italic />
     </AbsoluteFill>
   );
 };

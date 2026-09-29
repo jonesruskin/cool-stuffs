@@ -60,7 +60,7 @@ export const Clock: React.FC = () => {
             return (
               <g key={yr}>
                 <rect x={x} y={760 - h} width={110} height={h} fill={i === 0 ? P.acc : P.acc2} opacity={i === 0 ? 1 : .75} />
-                <text x={x + 55} y={760 - h - 18} textAnchor="middle" fontFamily="JetBrains Mono" fontSize={30} fill={P.ink}>{lab}</text>
+                <text x={x + 55} y={760 - h - 18} textAnchor="middle" fontFamily="JetBrains Mono" fontSize={30} fill={P.ink} opacity={prog(f, 92 + i * 14, 20)}>{lab}</text>
                 <text x={x + 55} y={798} textAnchor="middle" fontFamily="JetBrains Mono" fontSize={18} letterSpacing={2} fill={P.dim}>{yr}</text>
               </g>
             );
@@ -79,7 +79,7 @@ export const Clock: React.FC = () => {
             const [x0, y0] = pts[seg2], [x1, y1] = pts[seg2 + 1];
             return <rect x={lerp(x0, x1, u) - 18} y={lerp(y0, y1, u) - 12 - Math.sin(u * Math.PI) * 30} width={36} height={16} rx={4} fill={P.acc} />; })()}
           {/* Ferris wheel */}
-          <g transform={`translate(1250 560) scale(.9)`} opacity={prog(f, 360, 20)}>
+          <g transform={`translate(1190 560) scale(.9)`} opacity={prog(f, 360, 20)}>
             <circle r={230} fill="none" stroke={P.ink} strokeWidth={2.5} />
             <circle r={200} fill="none" stroke={P.dim} strokeWidth={1} />
             {Array.from({ length: 16 }, (_, i) => { const a = (i / 16) * Math.PI * 2 + wheel * Math.PI / 180;
@@ -90,8 +90,8 @@ export const Clock: React.FC = () => {
           </g>
         </g>
       </svg>
-      <Label text="1884 · Coney Island coaster" at={392} x={150} y={836} color={P.dim} rule={false} size={15} />
-      <Label text="1893 · the Ferris wheel" at={404} x={1250} y={836} color={P.dim} align="center" rule={false} size={15} />
+      <Label text="1884 · Coney Island coaster" at={392} x={150} y={862} color={P.dim} rule={false} size={15} />
+      <Label text="1893 · the Ferris wheel" at={404} x={1190} y={862} color={P.dim} align="center" rule={false} size={15} />
       <Tag id="together" text="the pub, the park, the terraces" x={1800} y={250} at={372} pal={P} align="right" />
       <Tag id="rhythm" text="music halls" x={1800} y={330} at={388} pal={P} align="right" />
       <Tag id="game" text="football leagues · 1888" x={1800} y={490} at={420} pal={P} align="right" />

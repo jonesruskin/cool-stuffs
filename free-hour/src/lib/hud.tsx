@@ -12,14 +12,14 @@ const AUD: Record<string, K[]> = {
   page:   [[40, 1, 'reader at a time']],
   clock:  [[340, 100000, 'in one stadium']],
   signal: [[60, 12, 'around one gramophone'], [158, 1000, 'in one cinema'], [248, 1000000, 'on one radio broadcast'], [338, 50000000, 'watching one show'], [440, 600000000, 'watching at once']],
-  screen: [[60, 2, 'at one console'], [170, 1, 'in one pair of headphones'], [366, 3000000000, 'players · each on their own']],
+  screen: [[60, 2, 'at one console'], [170, 1, 'in one pair of headphones'], [366, 3000000000, 'players, each apart']],
   ai:     [[40, 1, 'made for you alone']],
 };
 const YRS: Record<string, [number, number][]> = {
   fire: [[0, 40000]], city: [[0, 5000], [372, 1945]], page: [[0, 585]], clock: [[0, 175], [340, 135]],
   signal: [[0, 148], [158, 130], [248, 105], [338, 70], [440, 56]], screen: [[0, 53], [170, 46], [266, 34], [366, 18]], ai: [[0, 3]],
 };
-const X0 = 600, X1 = 1320;
+const X0 = 580, X1 = 1260;
 const xOf = (ya: number) => interpolate(Math.log10(ya), [.3, 4.75], [X1, X0]);
 const TICKS: [number, string][] = [[40000, '40,000'], [5000, '5,000'], [500, '500'], [100, '100'], [10, '10'], [2, 'NOW']];
 

@@ -14,15 +14,15 @@ const SUITS = ['♠', '♥', '♣', '♦', '♠'];
 
 export const Page: React.FC = () => {
   const f = useCurrentFrame();
-  const aOut = prog(f, 178, 20, ease.in);
+  const aOut = prog(f, 168, 20, ease.in);
   // press: the type block drops at 214, lifts by 240
-  const drop = prog(f, 182, 32, ease.in), lift = prog(f, 222, 22, ease.inOut);
+  const drop = prog(f, 184, 30, ease.inOut), lift = prog(f, 222, 22, ease.inOut);
   const blockY = lerp(-560, 300, drop) - lift * 860;
   const hit = f >= 214;
   const pageShake = hit ? Math.sin((f - 214) * 2.2) * Math.exp(-(f - 214) / 5) * 8 : 0;
   const tile = prog(f, 262, 30, ease.inOut);           // the page shrinks into one of many copies
   const reader = prog(f, 336, 36, ease.inOut);
-  const pageA = prog(f, 186, 12) * (1 - prog(f, 318, 18, ease.in));
+  const pageA = prog(f, 198, 8) * (1 - prog(f, 318, 18, ease.in));
   const cols = 11, rows = 5;
   return (
     <AbsoluteFill>
