@@ -2,7 +2,7 @@
 import React from 'react';
 import { AbsoluteFill, useCurrentFrame, random } from 'remotion';
 import { PAL, prog, ease, lerp, env, F } from '../lib/theme';
-import { ChapterHead, Cap, Tag, Person, fmt } from '../lib/kit';
+import { ChapterHead, Cap, Tag, Person, fmt, CONSTANTS, GLYPH } from '../lib/kit';
 import { Flame } from '../lib/fire';
 
 const P = PAL.ai;
@@ -103,6 +103,8 @@ const Return: React.FC<{ f: number; o: number }> = ({ f, o }) => {
       {RING.filter((r) => !r.front).map(person)}
       <g opacity={1 - warm}>
         <circle cx={960} cy={500} r={150 * orbPulse} fill="url(#orb)" opacity={.9} />
+        {CONSTANTS.map((c, k) => { const a = f / 40 + (k / 6) * Math.PI * 2, rx = 300, ry = 110; const x = 960 + Math.cos(a) * rx, y = 500 + Math.sin(a) * ry;
+          return <g key={c.id} transform={`translate(${x - 22} ${y - 22}) scale(.44)`} opacity={.55 + .45 * Math.sin(a)}>{GLYPH[c.id].map((d, i) => <path key={i} d={d} stroke={P.acc2} strokeWidth={5} fill="none" strokeLinecap="round" strokeLinejoin="round" />)}</g>; })}
       </g>
       {warm > 0 && <g opacity={warm}><Flame x={960} y={600} s={.62} outer={FIRE.acc} mid={FIRE.acc2} seed="ret" logs /></g>}
       <Person x={lerp(960, 1180, warm)} y={lerp(790, 700, warm)} s={lerp(2, 1.25, warm)} color="#0a0503" rim={warm > .5 ? FIRE.acc : P.acc} pose="sit" />
@@ -123,7 +125,7 @@ export const AI: React.FC = () => {
         <Chart f={f} o={stage(f, 304, 456)} />
         <Return f={f} o={prog(f, 456, 20)} />
       </svg>
-      <StoryCard f={f} o={stage(f, 66, 150)} />
+      <StoryCard f={f} o={stage(f, 72, 150)} />
       <Tag id="story" text="stories that answer you" x={120} y={260} at={80} out={300} pal={P} />
       <Tag id="rhythm" text="songs on demand" x={120} y={340} at={158} out={300} pal={P} />
       <Tag id="game" text="worlds that adapt to you" x={120} y={420} at={238} out={300} pal={P} />

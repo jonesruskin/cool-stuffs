@@ -139,7 +139,7 @@ export const Counter: React.FC<{ from: number; to: number; at: number; dur?: num
 // A chapter opens with a large title, then settles into a small label at top-left.
 export const ChapterHead: React.FC<{ n: number; kicker: string; title: string; pal: Pal; dur: number }> = ({ n, kicker, title, pal, dur }) => {
   const f = useCurrentFrame();
-  const settle = prog(f, 62, 26, ease.inOut);
+  const settle = prog(f, 46, 24, ease.inOut);
   const out = prog(f, dur - 14, 14, ease.in);
   const inP = prog(f, 0, 26);
   const size = lerp(170, 54, settle);

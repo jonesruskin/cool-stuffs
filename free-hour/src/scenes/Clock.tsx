@@ -16,7 +16,7 @@ const arc = (cx: number, cy: number, r: number, a0: number, a1: number) => {
 export const Clock: React.FC = () => {
   const f = useCurrentFrame();
   const CX = lerp(640, 960, prog(f, 200, 50, ease.inOut));
-  const clockA = prog(f, 56, 20) * (1 - prog(f, 330, 24, ease.in));
+  const clockA = prog(f, 66, 20) * (1 - prog(f, 330, 24, ease.in));
   const donut = prog(f, 196, 70, ease.inOut);
   const barsA = env(f, 80, 200, 12, 16);
   const leisure = prog(f, 338, 30);

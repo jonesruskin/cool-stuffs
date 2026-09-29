@@ -92,7 +92,7 @@ export const Screen: React.FC = () => {
   return (
     <AbsoluteFill>
       <svg width={1920} height={1080} style={{ position: 'absolute' }}>
-        <Pong f={f} o={stage(f, 58, 170)} />
+        <Pong f={f} o={stage(f, 70, 170)} />
         <Walkman f={f} o={stage(f, 170, 266)} />
         <Web f={f} o={stage(f, 266, 366)} />
         <Feed f={f} o={stage(f, 366, 640)} blur={blur} />

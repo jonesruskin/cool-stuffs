@@ -81,7 +81,7 @@ def clap_soft(): return clap() * .6
 def crackle(dur, dens=40, vol=.08):
     n = int(dur * SR); y = np.zeros(n)
     idx = rng.integers(0, n, int(dens * dur)); y[idx] = rng.uniform(-1, 1, len(idx))
-    return hp(signal.lfilter([1], [1, -.6], y), 1500) * vol + hp(rng.standard_normal(n), 3000) * vol * .08
+    return lp(hp(signal.lfilter([1], [1, -.6], y), 1200), 7000) * vol
 def crowd(dur, vol=.3):
     t = tt(dur); y = bp(rng.standard_normal(len(t)), 300, 2500) * (np.sin(np.pi * t / dur) ** .7)
     return np.stack([y, np.roll(y, 2000)], 1) * vol
@@ -172,7 +172,9 @@ add('fx', whoosh(.8, 300, 5000), S('page', 262), .5)
 k0 = CH['clock']
 for i in range(int(7 * 4 * 2)):
     add('fx', tick(i % 2 == 0), b(k0, i * .5), .45 if i % 2 == 0 else .3, .1)
-for k in range(1, 7):
+play('vc', [38, 45], b(k0), 2 * BAR + .5, .5, att=.6, g=.5); play('cb', [26], b(k0), 2 * BAR + .5, .45, att=.6, g=.45)
+for i in range(8): add('perc', frame_drum(.4), b(k0, i), .3)
+for k in range(0, 7):
     add('perc', smp('Percussion/Anvil_Hit1_v1_Sum.wav'), b(k0 + k, 0), .18)
 for k in range(2, 7):
     ch = chord_at(k)
@@ -279,13 +281,13 @@ wet = convolve(hp(music, 120), IR) * .28
 mix = hp(music, 30) + wet + x('perc') * .85 + convolve(x('perc'), IR_S) * .12 + x('fx') * .9 + x('amb')
 mix = mix[:int(DUR * SR)]
 # chapter-level gain staging toward a planned dynamic arc (dBFS RMS per chapter)
-TARGET = {'open': -25, 'axioms': -21, 'fire': -18, 'city': -17.5, 'page': -18, 'clock': -17.5, 'signal': -17, 'screen': -15.5, 'ai': -18, 'close': -16.5}
+TARGET = {'open': -25, 'axioms': -21, 'fire': -18, 'city': -17.5, 'page': -18, 'clock': -16, 'signal': -15.8, 'screen': -15.5, 'ai': -18, 'close': -16.5}
 gain = np.ones(len(mix))
 for c in TL['chapters']:
     i0, i1 = int(S(c['id']) * SR), int((S(c['id']) + c['bars'] * BAR) * SR)
     seg = mix[i0:i1]; r = 20 * np.log10(np.sqrt(np.mean(seg ** 2)) + 1e-9)
     gain[i0:i1] = 10 ** ((TARGET[c['id']] - r) / 20)
-k = int(1.2 * SR); gain = np.convolve(np.pad(gain, (k, k), mode='edge'), np.ones(k) / k, 'same')[k:-k]
+k = int(1.2 * SR); gp = np.pad(gain, (k, k), mode='edge'); cs = np.cumsum(np.insert(gp, 0, 0)); gain = ((cs[k:] - cs[:-k]) / k)[k // 2: k // 2 + len(gain)]
 mix *= gain[:, None]
 fo = int(2.0 * SR); mix[-fo:] *= np.linspace(1, 0, fo)[:, None] ** 1.5
 # gentle programme compression (block RMS follower), then soft clip and true-peak ceiling
@@ -295,6 +297,7 @@ for i in range(0, len(lvl), 64):
 over = np.maximum(0, 20 * np.log10(env + 1e-9) + 16)
 mix *= (10 ** (-over * (1 - 1 / 2.5) / 20))[:, None]
 mix = np.tanh(mix * 1.2) / 1.2
+mix *= 10 ** (2 / 20)
 tp = max(np.max(np.abs(signal.resample_poly(mix[:, c], 4, 1))) for c in range(2)); mix *= min(1.0, 10 ** (-1 / 20) / tp)
 wavfile.write(os.path.join(ROOT, 'public', 'score.wav'), SR, (np.clip(mix, -1, 1) * 32767).astype(np.int16))
 print('wrote public/score.wav', len(mix) / SR)

@@ -84,7 +84,7 @@ export const Signal: React.FC = () => {
     <AbsoluteFill>
       <ChapterHead n={6} kicker="1877 – 1969" title="The Signal" pal={P} dur={576} />
       <svg width={1920} height={1080} style={{ position: 'absolute' }}>
-        <Phonograph f={f} o={stage(f, 60, 158)} />
+        <Phonograph f={f} o={stage(f, 70, 158)} />
         <Cinema f={f} o={stage(f, 158, 248)} />
         <Radio f={f} o={stage(f, 248, 338)} />
         <TV f={f} o={stage(f, 338, 430)} />
